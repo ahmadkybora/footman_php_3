@@ -1,0 +1,17 @@
+{
+    "name": "kybora/footman-php",
+    "description": "My FOOTMAN FOOTMAN PHP Project",
+    "license": "MIT",
+    "config": {
+        "optimize-autoloader": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": ["app/HelperFunctions/index.php"]
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}

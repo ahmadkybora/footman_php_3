@@ -1,0 +1,4 @@
+node_modules
+vendor
+resources/front/node_modules
+resources/front/public/footman_Ui/node_modules
