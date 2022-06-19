@@ -11,6 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
+        dd(headers_list());
         // $c = require_once(__DIR__ . "/../../../App/FOOTMAN/Services/Localization/config.php");
         // dd($c['lang']);
         // $user = User::create([

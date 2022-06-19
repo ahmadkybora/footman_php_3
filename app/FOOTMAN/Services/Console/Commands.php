@@ -47,7 +47,7 @@ class $fileName extends Controller
 
     public static function serve()
     {
-        `php -S localhost:8080 -t public`;
+        `php -S localhost:8000 -t public`;
     }
 
     public static function makeModel($fileName)

@@ -4,6 +4,10 @@ namespace App\FOOTMAN\Services;
 
 class Response
 {
+    function __construct()
+    {
+        Headers::set();
+    }
      // این قسمت برای استاتوس کد http
     public function setStatusCode(int $code)
     {
