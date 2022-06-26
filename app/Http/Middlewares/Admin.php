@@ -6,6 +6,5 @@ class Admin
 {
     public static function handle()
     {
-        echo "h";
     }
 }

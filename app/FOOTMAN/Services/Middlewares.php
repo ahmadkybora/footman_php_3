@@ -9,10 +9,7 @@ class Middlewares
     {
         foreach(Kernel::$Routemiddlewares as $key => $value)
         {
-            foreach($value::handle() as $k => $v)
-            {
-                dd($v);
-            }
+            $value::handle();
         }
     }
 }
