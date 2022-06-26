@@ -4,6 +4,11 @@ namespace App\FOOTMAN\Services;
 
 class Request
 {
+    public function __construct()
+    {
+        Middlewares::set();
+    }
+    
     /**
      * این فانکشن مسیر جاری را میگیرد
      * بوسیله متغییر جهانی
