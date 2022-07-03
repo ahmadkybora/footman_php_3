@@ -7,6 +7,7 @@ class Response
     function __construct()
     {
         Headers::set();
+        Middlewares::set();
     }
      // این قسمت برای استاتوس کد http
     public function setStatusCode(int $code)

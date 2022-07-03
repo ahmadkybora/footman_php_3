@@ -23,5 +23,5 @@ $app = new App($config);
 // $re = new Request();
 // dd($re);
 $app->router->get('/', [HomeController::class, 'index']);
-
+$app->router->middleware("admin")->get('/create', [HomeController::class, 'create']);
 $app->run();

@@ -299,6 +299,7 @@ if(! function_exists('convertMoneyToCents'))
 if(! function_exists('json')) {
     function json($data = [], $status = 200, array $headers = [], $options = 0)
     {
+        setStatusCode($status);
         echo json_encode($data, true); 
     }
 }

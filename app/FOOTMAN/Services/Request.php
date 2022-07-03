@@ -6,7 +6,7 @@ class Request
 {
     public function __construct()
     {
-        Middlewares::set();
+        // Middlewares::set();
     }
     
     /**
@@ -55,7 +55,7 @@ class Request
      */
     public function isGet()
     {
-        return $this->method === 'get';
+        return $this->method() === 'get';
     }
 
     /**
@@ -64,7 +64,7 @@ class Request
      */
     public function isPost()
     {
-        return $this->method === 'post';
+        return $this->method() === 'post';
     }
 
     public function body()
