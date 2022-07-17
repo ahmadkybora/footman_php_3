@@ -3,15 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\FOOTMAN\Service\Models\User;
 use App\FOOTMAN\Service\Services\App;
 use App\FOOTMAN\Services\Controller;
+use App\FOOTMAN\Services\Session;
+use App\Models\User;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        // dd($_SESSION);
+        $user = new User();
+        $user->last_name = "montazeri11";
+        $user->first_name = "ahmad11";
+        $user->username = "kybora11";
+        $user->save();
 
+        dd($user->lastInsertId());
+        Session::add("SESSION_USER_ID", $user->id);
         // dd(headers_list());
         // $c = require_once(__DIR__ . "/../../../App/FOOTMAN/Services/Localization/config.php");
         // dd($c['lang']);

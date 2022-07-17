@@ -22,6 +22,7 @@ class Router
     {
         foreach(Kernel::$Routemiddlewares as $key => $value)
         {
+
             if($key == $midleware)
                 $value::handle();
         }

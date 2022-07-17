@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Services\Model;
+use App\FOOTMAN\Services\Model;
 
 class Post extends Model
 {

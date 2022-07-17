@@ -7,6 +7,9 @@
 // use Carbon\Carbon;
 // use App\Models\User;
 
+use App\FOOTMAN\Services\Session;
+use App\Models\User;
+session_start();
 /**
  * this method for make view in directory resources
  * @param $path
@@ -250,29 +253,29 @@ if(! function_exists('session')) {
 /**
  *
  */
-// if(! function_exists('isAuthenticated'))
-// {
-//     function isAuthenticated ()
-//     {
-//         return Session::has('SESSION_USER_ID') ? true : false;
-//     }
-// }
+if(! function_exists('isAuthenticated'))
+{
+    function isAuthenticated ()
+    {
+        return Session::has('SESSION_USER_ID') ? true : false;
+    }
+}
 
 /**
  *
  */
-// if(! function_exists('user'))
-// {
-//     function user ()
-//     {
-//         if(isAuthenticated())
-//         {
-//             return User::findOrFail(Session::get('SESSION_USER_ID'));
-//         }
+if(! function_exists('user'))
+{
+    function user ()
+    {
+        if(isAuthenticated())
+        {
+            return User::findOrFail(Session::get('SESSION_USER_ID'));
+        }
 
-//         return false;
-//     }
-// }
+        return false;
+    }
+}
 
 /**
  *

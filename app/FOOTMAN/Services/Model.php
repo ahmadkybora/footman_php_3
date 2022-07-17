@@ -29,6 +29,8 @@ abstract class Model
      */
     public function save()
     {
+        // Session::add("admin", "admin");
+        // Session::add("username", "username");
         /**
          * بوسیله متد تیبل نیم اسم جدول را گرفته و همچنین بوسیله متد 
          * attributes
@@ -190,6 +192,19 @@ abstract class Model
     }
 
     /**
+     * این متد برای دسترسی به ای دی است
+     * بوسیله اراسل ای دی 
+     */
+    public static function findOrFail($id)
+    {
+        $tableName = static::tableName()["table_name"];
+        $sql = "SELECT * FROM $tableName WHERE id=:id";
+        $statement = static::prepare($sql);
+        $statement->execute(['id' => $id]);
+        return $statement->fetch();
+    }
+
+    /**
      * این متد بر اساس ای دی مقدار را پیدا کرده و از دیتابیس حذف میکند
      */
     public static function delete($id)
@@ -260,5 +275,10 @@ abstract class Model
         $sql = "SELECT * FROM $tableName INNER JOIN $relationship ON $foriegn_key=$relationship.id";
         $statement = static::query($sql);
         return $statement->fetchAll();
+    }
+
+    public static function lastInsertId()
+    {
+        // return static::query($this->lastInsertId());
     }
 } 
