@@ -195,6 +195,19 @@ abstract class Model
      * این متد برای دسترسی به ای دی است
      * بوسیله اراسل ای دی 
      */
+    public static function findByUsername($username)
+    {
+        $tableName = static::tableName()["table_name"];
+        $sql = "SELECT * FROM $tableName WHERE id=:id";
+        $statement = static::prepare($sql);
+        $statement->execute(['username' => $username]);
+        return $statement->fetch();
+    }
+
+    /**
+     * این متد برای دسترسی به ای دی است
+     * بوسیله اراسل ای دی 
+     */
     public static function findOrFail($id)
     {
         $tableName = static::tableName()["table_name"];
@@ -251,10 +264,16 @@ abstract class Model
             $params [$key] = $val;
         }
         static::prepare($sql)->execute($params);
+        return new self;
     }
 
-    public function where()
+    public static function where($column, $operator, $data)
     {
+        $tableName = static::tableName()["table_name"];
+        $sql = "SELECT * FROM $tableName WHERE $column $operator $data";
+        // dd($sql);
+        static::query($sql);
+        // return new self;
     }
 
     public function whereNot()
